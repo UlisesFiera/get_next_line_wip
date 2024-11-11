@@ -34,7 +34,7 @@ void	copy_content(t_list *list, char *new_string)
 	while (list)
 	{
 		j = 0;
-		while (list->string[j] && new_string[i])
+		while (list->string[j])
 		{
 			if (list->string[j] == '\n')
 			{

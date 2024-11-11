@@ -83,7 +83,7 @@ char	*get_next_line(int fd)
 	static t_list	*str_list;
 	char			*next_line;
 
-	str_list = NULL;
+	next_line = NULL;
 	if (fd < 0 || BUFFER_SIZE < 0 || read(fd, next_line, 0) < 0)
 		return (NULL);
 	create_list(&str_list, fd);
