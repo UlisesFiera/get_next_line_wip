@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ulfernan <ulfernan@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/13 17:54:39 by ulfernan          #+#    #+#             */
+/*   Updated: 2024/11/13 18:02:04 by ulfernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 void	dealloc(t_list **list, t_list *clean_node, char *buf)
@@ -56,11 +68,11 @@ t_list	*lstlast(t_list *lst)
 	if (!lst)
 		return (NULL);
 	while (lst->next)
-        lst = lst->next;
+		lst = lst->next;
 	return (lst);
 }
 
-int		found_nl(t_list *list)
+int	found_nl(t_list *list)
 {
 	int		i;
 
@@ -80,7 +92,7 @@ int		found_nl(t_list *list)
 	return (0);
 }
 
-int		len_sum(t_list *list)
+int	len_sum(t_list *list)
 {
 	int		len;
 	int		i;
@@ -108,13 +120,16 @@ int		len_sum(t_list *list)
 
 /*
 
-->	In "len_sum" we check if the char pointed is "\n", because in that case,
-	we want to include it in the final line returned. We gotta increase the len to
-	include it later, and return because we don't want the rest of the chars
+->	In "len_sum" we check if the char pointed is "\n", because 
+	in that case, we want to include it in the final line 
+	returned. We gotta increase the len to include it later, 
+	and return because we don't want the rest of the chars
 	from that node.
-
--> "copy_content" just copies the content of the node into the final string. When it founds
-	the "\n", it adds it to the string, adds a null at the end, and finishes.
-	l->	The null adding outside the loop is just in case we are at the EOF, where sometimes
-		the text doesn't end in a "\n".
+-> "copy_content" just copies the content of the node into 
+	the final string. When it founds the "\n", it adds it to 
+	the string, adds a null at the end, and finishes.
+	l->	The null adding outside the loop is just in case we 
+		are at the EOF, where sometimes the text doesn't end 
+		in a "\n".
+		
 */
