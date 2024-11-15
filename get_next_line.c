@@ -6,7 +6,7 @@
 /*   By: ulfernan <ulfernan@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 17:55:48 by ulfernan          #+#    #+#             */
-/*   Updated: 2024/11/13 17:59:46 by ulfernan         ###   ########.fr       */
+/*   Updated: 2024/11/15 20:08:35 by ulfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ char	*get_next_line(int fd)
 	char			*next_line;
 
 	next_line = NULL;
-	if (fd < 0 || BUFFER_SIZE < 0 || read(fd, next_line, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	create_list(&str_list, fd);
 	if (!str_list)
