@@ -6,7 +6,7 @@
 /*   By: ulfernan <ulfernan@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 17:55:48 by ulfernan          #+#    #+#             */
-/*   Updated: 2024/11/15 20:08:35 by ulfernan         ###   ########.fr       */
+/*   Updated: 2024/11/18 18:29:58 by ulfernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	create_list(t_list **str_list, int fd)
 		if (!str_read)
 			return ;
 		len = read(fd, str_read, BUFFER_SIZE);
-		if (!len)
+		if (len <= 0)
 		{
 			free(str_read);
 			return ;
